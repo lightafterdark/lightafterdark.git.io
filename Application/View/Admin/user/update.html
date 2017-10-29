@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./Public/admin/css/ch-ui.admin.css">
+    <link rel="stylesheet" href="./Public/admin/font/css/font-awesome.min.css">
+</head>
+<body>
+    <!--面包屑导航 开始-->
+    <div class="crumb_warp">
+        <i class="fa fa-bell"></i> 欢迎登陆网站后台。
+        <i class="fa fa-home"></i> <a href="#">首页</a> &raquo; 修改用户信息
+    </div>
+    <!--面包屑导航 结束-->w
+    
+    <div class="result_wrap">
+        <form action="index.php?p=admin&c=user&a=update" method="post" enctype="multipart/form-data">
+            <table class="add_tab">
+                <tbody>
+                    <tr>
+                        <th><i class="require">*</i>用户姓名：</th>
+                        <td>
+                            <input type="text" class="lg" name="name" value="{$userInfo.name}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><i class="require">*</i>缩略图：</th>
+                        <td><input type="file" name="img" id="file1" onchange="previewFile(1)">
+                            <img src="" id="img1" height="200" width="300" alt="Image preview..."/></td>
+                        <input type="hidden" value="{$userInfo.img}" name="img2"/>
+                        <!--<th>头像</th>-->
+                        <!--<td class="tc">-->
+                            <!--<img src="./Public/upload/{$userInfo.img}" width="50" height="50" />-->
+                        <!--</td>-->
+                    </tr>
+                    <tr>
+                        <th>登录账户：</th>
+                        <td>
+                            <input type="hidden" name="id" value="{$userInfo.id}">
+                            <input type="text" name="user" value="{$userInfo.uname}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>密码：</th>
+                        <td>
+                            <input type="password" name="pwd" value="{$userInfo.pwd}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>
+                            <input type="submit" value="提交">
+                            <input type="button" class="back" onclick="history.go(-1)" value="返回">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

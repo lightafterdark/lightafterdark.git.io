@@ -1,0 +1,181 @@
+
+/*边框效果*/
+.bb h1{
+     text-align: center;
+    color: #e6e6e6;
+    font-size: 120px;
+    margin: 50px 0 10px 0;
+    font-weight: normal
+}
+.bb, .bb::before, .bb::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.bb {
+    width: 300px;
+    height: 200px;
+    /*box-shadow: inset 0 0 0 1px rgba(105, 202, 98, 0.5);*/
+    position: relative;
+    margin:100px auto;
+    line-height: 200px;
+}
+.bb::before, .bb::after {
+    content: '';
+    z-index: -1;
+    margin: -5%;
+    box-shadow: inset 0 0 0 2px;
+    animation: clipMe 8s linear infinite;
+}
+.bb::before {
+    animation-delay: -4s;
+}
+.bb:hover::after, .bb:hover::before {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+@keyframes clipMe {
+    0%, 100% {
+        clip: rect(0px, 300.0px, 0px, 0px);
+    }
+    25% {
+        clip: rect(0px, 0px, 300.0px, 0px);
+    }
+    50% {
+        clip: rect(300.0px, 300.0px, 300.0px, 0px);
+    }
+    75% {
+        clip: rect(0px, 300.0px, 300.0px, 300.0px);
+    }
+}
+.box{
+    position: relative;
+    height: 500px;
+    background-image: url("../img/bj.jpg");
+    /* background-size: 600px 600px; */
+}
+.login_box h2 {
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    margin-top: 35px;
+}
+.login_box .form ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    position: relative
+}
+.login_box .form ul li input.text {
+    width: 228px;
+    height: 23px;
+    color: #555;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-indent: 38px
+}
+
+.login_box .form ul li input[type='submit'] {
+    font-family: "å¾®è½¯é›…é»‘";
+    width: 240px;
+    height: 33px;
+    border-radius: 3px;
+    color: #fff;
+    background: #337ab7;
+    border: 1px solid #2e6da4
+}
+.login_box .form ul li input[type='submit']:hover {
+    background: #286090
+}
+
+.login_box .form ul li input.code {
+    width: 120px;
+    height: 23px;
+    color: #555;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-indent: 38px
+}
+
+.login_box .form ul li span {
+    background: #eee;
+    height: 33px;
+    width: 33px;
+    text-align: center;
+    line-height: 33px;
+    border-right: 1px solid #ccc;
+    border-radius: 3px 0 0 3px;
+    position: absolute;
+    left: 1px;
+    top: 1px
+}
+
+.login_box .form ul li img {
+    width: 100px;
+    height: 33px;
+    float: right;
+    border: 1px solid #ccc
+}
+
+.login_box .form p {
+    font-size: 12px;
+    line-height: 30px;
+    color: #333;
+    text-align: center
+}
+
+.login_box .form p a {
+    line-height: 30px;
+    color: #ff9a00
+}
+
+.bottom .form p {
+    font-size: 12px;
+    line-height: 30px;
+    color: #333;
+    text-align: center
+}
+
+.bottom .form p a {
+    line-height: 30px;
+    color: #ff9a00
+}
+.fu{
+    height:250px;
+    width: 600px;
+    position:relative;
+    margin:100px auto;
+}
+.fu div{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+    display:none;
+}
+.form.show{
+    display:block;
+}
+.btn{
+    width: 500px;
+    margin:-100px auto;
+}
+.box .bottom{
+  /*   width: 100%;
+    height: 300px; */
+    position: absolute;
+    bottom: 0;
+}
+.box .bottom p{
+    /* position: absolute;
+    left: 50%;
+    width:300px; */
+    text-align: center;
+
+} 

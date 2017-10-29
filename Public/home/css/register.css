@@ -1,0 +1,68 @@
+
+/*边框效果*/
+.bb h1{
+     text-align: center;
+    color: #e6e6e6;
+    font-size: 60px;
+    margin: 50px 0 10px 0;
+    font-weight: normal
+}
+.bb, .bb::before, .bb::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.bb {
+    width: 300px;
+    height: 200px;
+    /*box-shadow: inset 0 0 0 1px rgba(105, 202, 98, 0.5);*/
+    position: relative;
+    margin:100px auto;
+    line-height: 200px;
+}
+.bb::before, .bb::after {
+    content: '';
+    z-index: -1;
+    margin: -5%;
+    box-shadow: inset 0 0 0 2px;
+    animation: clipMe 8s linear infinite;
+}
+.bb::before {
+    animation-delay: -4s;
+}
+.bb:hover::after, .bb:hover::before {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+@keyframes clipMe {
+    0%, 100% {
+        clip: rect(0px, 300.0px, 0px, 0px);
+    }
+    25% {
+        clip: rect(0px, 0px, 300.0px, 0px);
+    }
+    50% {
+        clip: rect(300.0px, 300.0px, 300.0px, 0px);
+    }
+    75% {
+        clip: rect(0px, 300.0px, 300.0px, 300.0px);
+    }
+}
+
+.register{
+    margin: 10px auto;
+    font-size: 30px;
+}
+.tips a{
+    text-decoration: none;
+}
+.tips{
+    margin-top: 50px;
+    margin-left: -20px;
+}
+
+.fullBtnBlue{display: inline-block;height: 50px;width: 342px;font-size: 20px;line-height: 50px;text-align: center;margin-bottom: 20px;outline: none;cursor: pointer;background-color: #32a5e7;color: #fff;}
+
+

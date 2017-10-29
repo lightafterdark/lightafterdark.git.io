@@ -1,0 +1,71 @@
+{include file="../common/header.html"}
+<link rel="stylesheet" type="text/css" href="./Public/home/css/message.css">
+
+<body>
+<div class="topInfo">
+    <span class="edit">编辑</span>
+    <div class="zoneName">
+        <!--<h2>欢迎来到我的空间</h2>-->
+        <h2>人生就像一杯咖啡，只有细细品味之后，才能感受到其中的乐趣!</h2>
+    </div>
+    <div class="author">
+        <h3>----zcc</h3>
+    </div>
+
+    <div class="support">
+        <img src="./Public/home/img/support_1.png" alt="赞" id="zan" onclick="document.getElementById('num').value=this.value+1">
+        <!--<span class="num"><input type="text" readonly value="7" id="num"></span>-->
+        <span class="num">7</span>
+    </div>
+    <div class="top_bottom">
+        <div class="photo">
+            <img src="./Public/home/img/touxiang.jpg">
+        </div>
+    </div>
+</div>
+<!-- 下面实现留言板功能 -->
+<div class="mainframe">
+    <div class="title">留言板</div>
+    <div class="message">主人寄语</div>
+    <div class="info">
+        这是主人留下的寄语~<br>
+        good&nbsp; &nbsp;good&nbsp;&nbsp;study,<br>
+        day&nbsp;&nbsp;day&nbsp;&nbsp;up!
+    </div>
+    <!--<div class="content" contenteditable="true"></div>-->
+    <form id="commentform" method="post" action="index.php?p=home&c=message&a=add">
+        <textarea class="lg" name="content" id="editor"></textarea>
+        <input type="hidden" name="pid" value="0" id="message_pid">
+        <input type="submit" name="submit" value="发表" class="subbtn">
+    </form>
+
+    <div class="numofmessage">留言(0)</div>
+    <div class="msgFrame">
+        {foreach $messageList as $mes}
+        <div class="content_1" style="margin-left:{100*$mes.level}px">
+            <img class="name" src="./Public/upload/{$mes.img}" style="border-radius: 50%" width="50px" height="50px"   alt="photo">
+            <div class="mainInfo">
+                <div class="userId">{$mes.uname}</div>
+
+                <div class="conInfo">
+                    {$mes.content}<br>
+                    <a href="#commentform" class="reply"
+                       onclick="document.getElementById('message_pid').value={$mes.id}">回复</a>
+                </div>
+                <div class="time">{$mes.created_time|date_format:'Y-m-d H:i'}</div>
+            </div>
+        </div>
+        {/foreach}
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="./Public/common/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="./Public/common/ueditor/ueditor.all.js"></script>
+<script type="text/javascript">
+    var ue = UE.getEditor('editor', {
+        initialFrameWidth: 900,
+        initialFrameHeight: 400
+
+    })
+</script>

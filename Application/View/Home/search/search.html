@@ -1,0 +1,67 @@
+{include file="../common/header.html"}
+	    
+<div id="main" class="add">
+
+	<div class="show-module-wrap clearfix"></div>
+	    
+ 	<div class="main-content clearfix">
+   		
+     	<div class="main-content-box fl">
+          
+			<div class="article-list">
+				{foreach $searchList as $sea}
+				<div class="content-text-box">
+		 			<a href="index.php?p=home&c=article&a=detail&id={$sea.id}" target="_blank"><h1 class="title-h1">
+		 				{$sea.title}
+		 			</h1></a>
+		 			<div class="detail-info-box">
+			            <ul class="clearfix">
+			               	<li id="Browse">
+			               		浏览量：<span id="countnum">{$sea.pv}</span>
+			               	</li>
+			               	<li>
+			               		作者：<span class="author">{$sea.author}</span>
+			               	</li>
+			            </ul>
+				     </div>
+					<!-- /content-header -->
+	 			</div>
+				{/foreach}
+			</div>
+   
+    	</div>
+   	</div>
+      
+	<footer class="footer-wrap">
+		<p>
+			<span>Design by：传值博客</span>
+			<span>备案号：<strong>沪ICP备XXXXXXXX号-2</strong></span>
+		</p>
+	</footer>
+</div>
+	
+<div class="fixed-side-menu">
+	<ul class="list">
+		<li id="returnTop">
+			<a class="ico-bg return-top" href="javascript:;">
+			</a>
+		</li>
+		<li>
+			<a class="ico-bg qq" href="http://wpa.qq.com/msgrd?v=3&amp;uin=88888888888&amp;site=qq&amp;menu=yes" target="_blank">
+			</a>
+		</li>
+		<li id="wechatBoxWrap" class="wechat-box-wrap">
+			<a class="ico-bg wechat" href="javascript:;"></a>
+			<div class="wechat-img">
+				<img src="./Public/home/img/weixin.png" width="150" height="135" alt="你大爷博客官方微信公众号">
+			</div>
+		</li>
+	</ul>
+</div>
+
+
+      
+	<script type="text/javascript" src="./Public/home/js/common.js"></script>
+	<script type="text/javascript" src="./Public/home/js/index.js"></script>
+</body>
+</html>
